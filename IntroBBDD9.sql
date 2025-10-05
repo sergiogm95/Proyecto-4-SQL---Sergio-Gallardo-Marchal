@@ -1,7 +1,7 @@
 -- 9. Vuelos con retraso de salida superior a una hora.
 
 SELECT flight_id, scheduled_departure, actual_departure,
-       (actual_departure - scheduled_departure) AS retrasoDeSalida -- Aquí estamos nombrando una nueva propiedad llamada delay, que es la diferencia (positiva) entre la hora de salida final, y la estimación 
+       (actual_departure - scheduled_departure) AS retrasoDeSalida -- Aquí estamos nombrando una nueva propiedad llamada retrasoDeSalida, que es la diferencia (positiva) entre la hora de salida final, y la estimación 
 FROM flights
 WHERE actual_departure - scheduled_departure > INTERVAL '1 hour'; -- Aquí filtramos los retrasos mayores a una hora. La IA me ayudo con el INTERVAL. Un INTERVAL es el resultado de la resta de dos valores de tipo timestamp, como lo son las horas de salida en nuestra tabla de vuelos.
 
@@ -808,4 +808,5 @@ WHERE actual_departure - scheduled_departure > INTERVAL '1 hour'; -- Aquí filtr
 32901	"2017-08-11 15:55:00+02"	"2017-08-11 18:45:00+02"	"02:50:00"
 32910	"2017-08-04 15:55:00+02"	"2017-08-04 18:47:00+02"	"02:52:00"
 33025	"2017-07-22 13:30:00+02"	"2017-07-22 16:24:00+02"	"02:54:00"
+
 33067	"2017-08-05 18:25:00+02"	"2017-08-05 21:31:00+02"	"03:06:00"
